@@ -17,7 +17,7 @@ In the worst case scenario, at least with this model the red timer needs to be 3
     <place displayName="true" id="ProximitySensor" initialMarking="0" invariant="&lt;= 0" name="ProximitySensor" nameOffsetX="0.0" nameOffsetY="0.0" positionX="322.0" positionY="206.0"/>
     <place displayName="true" id="Green" initialMarking="1" invariant="&lt; inf" name="Green" nameOffsetX="0.0" nameOffsetY="0.0" positionX="52.0" positionY="446.0"/>
     <place displayName="true" id="Yellow" initialMarking="0" invariant="&lt;= 5" name="Yellow" nameOffsetX="0.0" nameOffsetY="0.0" positionX="322.0" positionY="446.0"/>
-    <place displayName="true" id="Red" initialMarking="0" invariant="&lt; inf" name="Red" nameOffsetX="0.0" nameOffsetY="0.0" positionX="562.0" positionY="446.0"/>
+    <place displayName="true" id="Red" initialMarking="0" invariant="&lt;= RedTimer" name="Red" nameOffsetX="0.0" nameOffsetY="0.0" positionX="562.0" positionY="446.0"/>
     <place displayName="true" id="Train1" initialMarking="1" invariant="&lt;= Train1Start" name="Train1" nameOffsetX="0.0" nameOffsetY="0.0" positionX="443.0" positionY="47.0"/>
     <place displayName="true" id="Train2" initialMarking="1" invariant="&lt;= Train2Start" name="Train2" nameOffsetX="0.0" nameOffsetY="0.0" positionX="621.0" positionY="45.0"/>
     <place displayName="true" id="Train3" initialMarking="1" invariant="&lt;= Train3Start" name="Train3" nameOffsetX="0.0" nameOffsetY="0.0" positionX="791.0" positionY="47.0"/>
