@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pnml xmlns="http://www.informatik.hu-berlin.de/top/pnml/ptNetb">
+  <net active="true" id="TAPN1" type="P/T net">
+    <place displayName="true" id="Number" initialMarking="3" invariant="&lt; inf" name="Number" nameOffsetX="-5.0" nameOffsetY="35.0" positionX="425.0" positionY="453.0"/>
+    <place displayName="true" id="Iterator" initialMarking="2" invariant="&lt; inf" name="Iterator" nameOffsetX="-5.0" nameOffsetY="35.0" positionX="335.0" positionY="273.0"/>
+    <place displayName="true" id="Modulus" initialMarking="0" invariant="&lt; inf" name="Modulus" nameOffsetX="-5.0" nameOffsetY="35.0" positionX="677.0" positionY="379.0"/>
+    <place displayName="true" id="PreloadIterator" initialMarking="0" invariant="&lt; inf" name="PreloadIterator" nameOffsetX="-5.0" nameOffsetY="35.0" positionX="458.0" positionY="142.0"/>
+    <place displayName="true" id="P5" initialMarking="0" invariant="&lt;= 0" name="P5" nameOffsetX="-5.0" nameOffsetY="35.0" positionX="515.0" positionY="273.0"/>
+    <place displayName="true" id="OriginalNumberCopy" initialMarking="0" invariant="&lt; inf" name="OriginalNumberCopy" nameOffsetX="-5.0" nameOffsetY="35.0" positionX="725.0" positionY="453.0"/>
+    <place displayName="true" id="ReloadingNumber" initialMarking="0" invariant="&lt; inf" name="ReloadingNumber" nameOffsetX="-5.0" nameOffsetY="35.0" positionX="635.0" positionY="543.0"/>
+    <place displayName="true" id="ReloadingIterator" initialMarking="0" invariant="&lt; inf" name="ReloadingIterator" nameOffsetX="-5.0" nameOffsetY="35.0" positionX="180.0" positionY="73.0"/>
+    <place displayName="true" id="P11" initialMarking="0" invariant="&lt; inf" name="P11" nameOffsetX="-5.0" nameOffsetY="35.0" positionX="177.0" positionY="418.0"/>
+    <transition angle="0" displayName="true" id="T2" infiniteServer="false" name="T2" nameOffsetX="-5.0" nameOffsetY="35.0" positionX="515.0" positionY="363.0" priority="0" urgent="false"/>
+    <transition angle="0" displayName="true" id="T3" infiniteServer="false" name="T3" nameOffsetX="-5.0" nameOffsetY="35.0" positionX="455.0" positionY="273.0" priority="0" urgent="false"/>
+    <transition angle="0" displayName="true" id="ReloadIterator" infiniteServer="false" name="ReloadIterator" nameOffsetX="-5.0" nameOffsetY="35.0" positionX="316.0" positionY="150.0" priority="0" urgent="false"/>
+    <transition angle="0" displayName="true" id="ClearModulus" infiniteServer="false" name="ClearModulus" nameOffsetX="-5.0" nameOffsetY="35.0" positionX="665.0" positionY="273.0" priority="0" urgent="false"/>
+    <transition angle="0" displayName="true" id="ReloadNumber" infiniteServer="false" name="ReloadNumber" nameOffsetX="-5.0" nameOffsetY="35.0" positionX="545.0" positionY="453.0" priority="0" urgent="false"/>
+    <transition angle="0" displayName="true" id="CycleComplete" infiniteServer="false" name="CycleComplete" nameOffsetX="-5.0" nameOffsetY="35.0" positionX="425.0" positionY="543.0" priority="0" urgent="false"/>
+    <transition angle="0" displayName="true" id="StopReloadingNumber" infiniteServer="false" name="StopReloadingNumber" nameOffsetX="-5.0" nameOffsetY="35.0" positionX="755.0" positionY="573.0" priority="0" urgent="false"/>
+    <transition angle="0" displayName="true" id="IterationCycleComplete" infiniteServer="false" name="IterationCycleComplete" nameOffsetX="-5.0" nameOffsetY="35.0" positionX="179.0" positionY="181.0" priority="0" urgent="false"/>
+    <transition angle="0" displayName="true" id="StopReloadingIterator" infiniteServer="false" name="StopReloadingIterator" nameOffsetX="-5.0" nameOffsetY="35.0" positionX="341.0" positionY="5.0" priority="0" urgent="false"/>
+    <transition angle="0" displayName="true" id="T12" infiniteServer="false" name="T12" nameOffsetX="-5.0" nameOffsetY="35.0" positionX="287.0" positionY="399.0" priority="0" urgent="false"/>
+    <arc id="T3 to P5" inscription="1" nameOffsetX="0.0" nameOffsetY="0.0" source="T3" target="P5" type="normal" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="471" yCoord="290"/>
+      <arcpath arcPointType="false" id="1" xCoord="491" yCoord="300"/>
+      <arcpath arcPointType="false" id="2" xCoord="513" yCoord="290"/>
+    </arc>
+    <arc id="P5 to T2" inscription="[0,0]" nameOffsetX="0.0" nameOffsetY="0.0" source="P5" target="T2" type="timed" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="527" yCoord="299"/>
+      <arcpath arcPointType="false" id="1" xCoord="527" yCoord="360"/>
+    </arc>
+    <arc id="Iterator to T3" inscription="[1,inf)" nameOffsetX="0.0" nameOffsetY="0.0" source="Iterator" target="T3" type="timed" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="361" yCoord="285"/>
+      <arcpath arcPointType="false" id="1" xCoord="461" yCoord="285"/>
+    </arc>
+    <arc id="T3 to PreloadIterator" inscription="1" nameOffsetX="0.0" nameOffsetY="0.0" source="T3" target="PreloadIterator" type="normal" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="467" yCoord="270"/>
+      <arcpath arcPointType="false" id="1" xCoord="469" yCoord="168"/>
+    </arc>
+    <arc id="PreloadIterator to ReloadIterator" inscription="[0,inf)" nameOffsetX="0.0" nameOffsetY="0.0" source="PreloadIterator" target="ReloadIterator" type="timed" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="455" yCoord="154"/>
+      <arcpath arcPointType="false" id="1" xCoord="333" yCoord="157"/>
+    </arc>
+    <arc id="ReloadIterator to Iterator" inscription="1" nameOffsetX="0.0" nameOffsetY="0.0" source="ReloadIterator" target="Iterator" type="normal" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="328" yCoord="177"/>
+      <arcpath arcPointType="false" id="1" xCoord="344" yCoord="270"/>
+    </arc>
+    <arc id="Modulus to ClearModulus" inscription="[0,inf)" nameOffsetX="0.0" nameOffsetY="0.0" source="Modulus" target="ClearModulus" type="timed" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="687" yCoord="376"/>
+      <arcpath arcPointType="false" id="1" xCoord="677" yCoord="300"/>
+    </arc>
+    <arc id="Iterator to ClearModulus" inscription="[0,inf)" nameOffsetX="0.0" nameOffsetY="0.0" source="Iterator" target="ClearModulus" type="tapnInhibitor" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="361" yCoord="279"/>
+      <arcpath arcPointType="false" id="1" xCoord="509" yCoord="227"/>
+      <arcpath arcPointType="false" id="2" xCoord="671" yCoord="285"/>
+    </arc>
+    <arc id="Number to T2" inscription="[0,inf)" nameOffsetX="0.0" nameOffsetY="0.0" source="Number" target="T2" type="timed" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="447" yCoord="454"/>
+      <arcpath arcPointType="false" id="1" xCoord="521" yCoord="375"/>
+    </arc>
+    <arc id="T2 to Modulus" inscription="1" nameOffsetX="0.0" nameOffsetY="0.0" source="T2" target="Modulus" type="normal" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="531" yCoord="375"/>
+      <arcpath arcPointType="false" id="1" xCoord="674" yCoord="389"/>
+    </arc>
+    <arc id="T2 to OriginalNumberCopy" inscription="1" nameOffsetX="0.0" nameOffsetY="0.0" source="T2" target="OriginalNumberCopy" type="normal" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="531" yCoord="375"/>
+      <arcpath arcPointType="false" id="1" xCoord="723" yCoord="458"/>
+    </arc>
+    <arc id="OriginalNumberCopy to ReloadNumber" inscription="[0,inf)" nameOffsetX="0.0" nameOffsetY="0.0" source="OriginalNumberCopy" target="ReloadNumber" type="timed" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="722" yCoord="464"/>
+      <arcpath arcPointType="false" id="1" xCoord="562" yCoord="457"/>
+    </arc>
+    <arc id="ReloadNumber to Number" inscription="1" nameOffsetX="0.0" nameOffsetY="0.0" source="ReloadNumber" target="Number" type="normal" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="551" yCoord="465"/>
+      <arcpath arcPointType="false" id="1" xCoord="451" yCoord="465"/>
+    </arc>
+    <arc id="Number to CycleComplete" inscription="[0,inf)" nameOffsetX="0.0" nameOffsetY="0.0" source="Number" target="CycleComplete" type="tapnInhibitor" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="437" yCoord="479"/>
+      <arcpath arcPointType="false" id="1" xCoord="437" yCoord="540"/>
+    </arc>
+    <arc id="ReloadingNumber to ReloadNumber" inscription="[0,inf)" nameOffsetX="0.0" nameOffsetY="0.0" source="ReloadingNumber" target="ReloadNumber" type="timed" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="636" yCoord="544"/>
+      <arcpath arcPointType="false" id="1" xCoord="561" yCoord="471"/>
+    </arc>
+    <arc id="ReloadNumber to ReloadingNumber" inscription="1" nameOffsetX="0.0" nameOffsetY="0.0" source="ReloadNumber" target="ReloadingNumber" type="normal" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="557" yCoord="480"/>
+      <arcpath arcPointType="false" id="1" xCoord="574" yCoord="547"/>
+      <arcpath arcPointType="false" id="2" xCoord="632" yCoord="553"/>
+    </arc>
+    <arc id="ReloadingNumber to StopReloadingNumber" inscription="[0,inf)" nameOffsetX="0.0" nameOffsetY="0.0" source="ReloadingNumber" target="StopReloadingNumber" type="timed" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="661" yCoord="558"/>
+      <arcpath arcPointType="false" id="1" xCoord="761" yCoord="585"/>
+    </arc>
+    <arc id="OriginalNumberCopy to StopReloadingNumber" inscription="[0,inf)" nameOffsetX="0.0" nameOffsetY="0.0" source="OriginalNumberCopy" target="StopReloadingNumber" type="tapnInhibitor" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="741" yCoord="479"/>
+      <arcpath arcPointType="false" id="1" xCoord="767" yCoord="570"/>
+    </arc>
+    <arc id="ReloadingNumber to CycleComplete" inscription="[0,inf)" nameOffsetX="0.0" nameOffsetY="0.0" source="ReloadingNumber" target="CycleComplete" type="tapnInhibitor" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="632" yCoord="554"/>
+      <arcpath arcPointType="false" id="1" xCoord="442" yCoord="550"/>
+    </arc>
+    <arc id="CycleComplete to ReloadingNumber" inscription="1" nameOffsetX="0.0" nameOffsetY="0.0" source="CycleComplete" target="ReloadingNumber" type="normal" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="441" yCoord="560"/>
+      <arcpath arcPointType="false" id="1" xCoord="557" yCoord="616"/>
+      <arcpath arcPointType="false" id="2" xCoord="634" yCoord="563"/>
+    </arc>
+    <arc id="Iterator to IterationCycleComplete" inscription="[0,inf)" nameOffsetX="0.0" nameOffsetY="0.0" source="Iterator" target="IterationCycleComplete" type="tapnInhibitor" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="334" yCoord="277"/>
+      <arcpath arcPointType="false" id="1" xCoord="195" yCoord="193"/>
+    </arc>
+    <arc id="IterationCycleComplete to ReloadingIterator" inscription="1" nameOffsetX="0.0" nameOffsetY="0.0" source="IterationCycleComplete" target="ReloadingIterator" type="normal" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="196" yCoord="188"/>
+      <arcpath arcPointType="false" id="1" xCoord="241" yCoord="159"/>
+      <arcpath arcPointType="false" id="2" xCoord="200" yCoord="97"/>
+    </arc>
+    <arc id="ReloadingIterator to IterationCycleComplete" inscription="[0,inf)" nameOffsetX="0.0" nameOffsetY="0.0" source="ReloadingIterator" target="IterationCycleComplete" type="tapnInhibitor" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="191" yCoord="99"/>
+      <arcpath arcPointType="false" id="1" xCoord="191" yCoord="178"/>
+    </arc>
+    <arc id="ReloadingIterator to ReloadIterator" inscription="[0,inf)" nameOffsetX="0.0" nameOffsetY="0.0" source="ReloadingIterator" target="ReloadIterator" type="timed" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="204" yCoord="92"/>
+      <arcpath arcPointType="false" id="1" xCoord="322" yCoord="162"/>
+    </arc>
+    <arc id="ReloadIterator to ReloadingIterator" inscription="1" nameOffsetX="0.0" nameOffsetY="0.0" source="ReloadIterator" target="ReloadingIterator" type="normal" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="328" yCoord="147"/>
+      <arcpath arcPointType="false" id="1" xCoord="328" yCoord="84"/>
+      <arcpath arcPointType="false" id="2" xCoord="206" yCoord="84"/>
+    </arc>
+    <arc id="PreloadIterator to StopReloadingIterator" inscription="[0,inf)" nameOffsetX="0.0" nameOffsetY="0.0" source="PreloadIterator" target="StopReloadingIterator" type="tapnInhibitor" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="460" yCoord="142"/>
+      <arcpath arcPointType="false" id="1" xCoord="357" yCoord="17"/>
+    </arc>
+    <arc id="ReloadingIterator to StopReloadingIterator" inscription="[0,inf)" nameOffsetX="0.0" nameOffsetY="0.0" source="ReloadingIterator" target="StopReloadingIterator" type="timed" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="205" yCoord="79"/>
+      <arcpath arcPointType="false" id="1" xCoord="347" yCoord="17"/>
+    </arc>
+    <arc id="P5 to ReloadIterator" inscription="[0,inf)" nameOffsetX="0.0" nameOffsetY="0.0" source="P5" target="ReloadIterator" type="tapnInhibitor" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="514" yCoord="277"/>
+      <arcpath arcPointType="false" id="1" xCoord="332" yCoord="167"/>
+    </arc>
+    <arc id="P5 to T3" inscription="[0,inf)" nameOffsetX="0.0" nameOffsetY="0.0" source="P5" target="T3" type="tapnInhibitor" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="512" yCoord="285"/>
+      <arcpath arcPointType="false" id="1" xCoord="471" yCoord="285"/>
+    </arc>
+    <arc id="Number to T12" inscription="[0,inf)" nameOffsetX="0.0" nameOffsetY="0.0" source="Number" target="T12" type="tapnInhibitor" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="422" yCoord="459"/>
+      <arcpath arcPointType="false" id="1" xCoord="303" yCoord="416"/>
+    </arc>
+    <arc id="Modulus to T12" inscription="[0,inf)" nameOffsetX="0.0" nameOffsetY="0.0" source="Modulus" target="T12" type="timed" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="674" yCoord="391"/>
+      <arcpath arcPointType="false" id="1" xCoord="304" yCoord="406"/>
+    </arc>
+    <arc id="T12 to P11" inscription="1" nameOffsetX="0.0" nameOffsetY="0.0" source="T12" target="P11" type="normal" weight="1">
+      <arcpath arcPointType="false" id="0" xCoord="293" yCoord="411"/>
+      <arcpath arcPointType="false" id="1" xCoord="203" yCoord="427"/>
+    </arc>
+  </net>
+  <k-bound bound="3"/>
+</pnml>
