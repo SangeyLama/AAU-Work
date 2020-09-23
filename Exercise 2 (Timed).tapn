@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <pnml xmlns="http://www.informatik.hu-berlin.de/top/pnml/ptNetb">
-  <constant name="T3Deadline" value="7"/>
+  <constant name="T3Deadline" value="5"/>
   <net active="true" id="TAPN1" type="P/T net">
-    <labels border="true" height="71" positionX="264" positionY="590" width="239">With a deadline of 4 it is not possible.
+    <labels border="true" height="68" positionX="265" positionY="591" width="240">With a deadline of 4 it is not possible.
 
-The deadline must be 7 or &gt; for all tasks to finish.</labels>
+The deadline must be 5 or &gt; for all tasks to finish.</labels>
     <place displayName="true" id="WaitToStartT0" initialMarking="1" invariant="&lt; inf" name="WaitToStartT0" nameOffsetX="0.0" nameOffsetY="0.0" positionX="135.0" positionY="330.0"/>
     <place displayName="true" id="WaitToStartT1" initialMarking="0" invariant="&lt; inf" name="WaitToStartT1" nameOffsetX="0.0" nameOffsetY="0.0" positionX="390.0" positionY="255.0"/>
     <place displayName="true" id="WaitToStartT2" initialMarking="0" invariant="&lt; inf" name="WaitToStartT2" nameOffsetX="0.0" nameOffsetY="0.0" positionX="390.0" positionY="330.0"/>
